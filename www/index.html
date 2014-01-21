@@ -33,7 +33,7 @@
 		document.addEventListener("deviceready", onDeviceReady, false);
 		window.onload = function() { 
 			//alert(device.uuid);
-			var ref = window.open('http://geobritaniaclient.naskidashvili.com/, '_blank', 'location=no,toolbar=no');
+			var ref = window.open('http://geobritaniaclient.naskidashvili.com/', '_blank', 'location=no,toolbar=no');
 		};
 		window.onunload = function(){};
 		// Cordova is ready
@@ -45,17 +45,7 @@
 			 //ref.addEventListener('exit', function() { alert(event.type); });
 			 document.addEventListener("resume", onResume, false);
 			 
-			var devicePlatform = device.platform;
-			if (devicePlatform == "Android") {
-				if (window.localStorage.getItem("shortcut") != "1")
-					{			
-						window.plugins.Shortcut.CreateShortcut("GeoBritania", function() {}, function(){} );
-						window.localStorage.setItem("shortcut", "1");
-					}
-			} else {
-				StatusBar.show();
-				StatusBar.overlaysWebView(false);
-			}
+			
 		}
 		function onResume() {
 			setTimeout(function() {
